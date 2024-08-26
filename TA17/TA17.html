@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <style>
+        p {
+            font-size: 20px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>Contador: <span id="contador">0</span></p>
+    <button onclick="incrementarContador()">Incrementar</button>
+
+    <script>
+        function incrementarContador() {
+            // Obtener el elemento <span> que contiene el contador
+            const contador = document.getElementById('contador');
+            
+            // Convertir el contenido del <span> a un número entero y aumentar en 1
+            let valorActual = parseInt(contador.textContent, 10);
+            valorActual += 1;
+            
+            // Actualizar el contenido del <span> con el nuevo valor
+            contador.textContent = valorActual;
+        }
+    </script>
+</body>
+</html>

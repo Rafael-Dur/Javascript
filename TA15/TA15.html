@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista con Eliminar</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="nuevoElemento" placeholder="Escribe un elemento">
+    <button onclick="añadirElemento()">Añadir elemento</button>
+    <button onclick="eliminarUltimoElemento()">Eliminar último elemento</button>
+    <ul id="lista"></ul>
+
+    <script>
+        function añadirElemento() {
+            // Obtener el valor del input
+            const input = document.getElementById('nuevoElemento');
+            const texto = input.value.trim();
+            
+            // Verificar que el input no esté vacío
+            if (texto === '') {
+                alert('Por favor, ingresa un texto');
+                return;
+            }
+
+            const nuevoElemento = document.createElement('li');
+            nuevoElemento.textContent = texto;
+
+            const lista = document.getElementById('lista');
+            lista.appendChild(nuevoElemento);
+
+            input.value = '';
+        }
+
+        function eliminarUltimoElemento() {
+            // Obtener la lista <ul>
+            const lista = document.getElementById('lista');
+            
+            // Verificar si la lista tiene al menos un elemento
+            if (lista.children.length === 0) {
+                alert('No hay elementos para eliminar');
+                return;
+            }
+
+            // Eliminar el último elemento <li>
+            lista.removeChild(lista.lastElementChild);
+        }
+    </script>
+</body>
+</html>

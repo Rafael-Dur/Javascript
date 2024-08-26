@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detectar Cambio de Tamaño de la Ventana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        p {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p id="tamaño">Tamaño de la ventana: </p>
+
+    <script>
+        function actualizarTamaño() {
+            // Obtener el tamaño actual de la ventana
+            const ancho = window.innerWidth;
+            const alto = window.innerHeight;
+
+            // Actualizar el contenido del párrafo con el tamaño de la ventana
+            const tamañoP = document.getElementById('tamaño');
+            tamañoP.textContent = `Tamaño de la ventana: ${ancho}px x ${alto}px`;
+        }
+
+        // Llamar a la función al cargar la página para mostrar el tamaño inicial
+        window.addEventListener('load', actualizarTamaño);
+        
+        // Añadir un evento para detectar cambios en el tamaño de la ventana
+        window.addEventListener('resize', actualizarTamaño);
+    </script>
+</body>
+</html>

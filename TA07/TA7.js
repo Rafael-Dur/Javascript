@@ -1,8 +1,7 @@
 function getTheTitles(books) {
-    // Obtener solo los títulos de los libros usando map
+
     const titles = books.map(book => book.title);
-    
-    const resultadoTexto = `Títulos de los libros: ${titles.join(', ')}<br>`;
+    const resultadoTexto = titles.map(title => `${title}<br>`).join('');
     
     const divResultado = document.getElementById("resultado");
     divResultado.innerHTML += resultadoTexto;
@@ -16,7 +15,6 @@ const books = [
     { title: 'Los Viajes de Gulliver', author: 'Jonathan Swift'},
     { title: 'Moby Dick', author: 'Herman Melville' },
     { title: 'El Náufrago', author: 'Daniel Defoe' }
-
 ];
 
 function mostrarResultados() {

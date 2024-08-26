@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar/Ocultar Elemento</title>
+    <style>
+        p {
+            font-size: 16px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="texto">Este es un párrafo que se puede mostrar u ocultar.</p>
+    <button onclick="mostrarOcultar()">Mostrar/Ocultar</button>
+
+    <script>
+        function mostrarOcultar() {
+            // Obtener el párrafo
+            const parrafo = document.getElementById('texto');
+            
+            // Verificar si el párrafo está visible o no
+            if (parrafo.style.display === 'none') {
+                // Mostrar el párrafo
+                parrafo.style.display = 'block';
+            } else {
+                // Ocultar el párrafo
+                parrafo.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

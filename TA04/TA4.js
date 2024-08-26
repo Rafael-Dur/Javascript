@@ -1,19 +1,16 @@
-function leapYears(año) {
-    // Verificar si el año es bisiesto
-    const esBisiesto = (año % 4 === 0 && año % 100 !== 0) || (año % 400 === 0);
+function sumAll(a, b) {
+    let suma = 0;
+    for (let i = a; i <= b; i++) {
+        suma += i;
+    }
     
-    // Generar el texto para mostrar
-    const resultadoTexto = `El año ${año} ${esBisiesto ? 'es' : 'no es'} un año bisiesto.<br>`;
+    console.log(`La suma de los números de ${a} a ${b} es: ${suma}`);
     
-    // Mostrar el resultado en la página web sin sobrescribir los anteriores
-    document.getElementById("resultado").innerHTML += resultadoTexto;
-
-    // Imprimir el resultado en la consola (opcional)
-    console.log(`El año ${año} ${esBisiesto ? 'es' : 'no es'} un año bisiesto.`);
+    const resultadoDiv = document.getElementById('resultado');
+    
+    resultadoDiv.innerHTML += `<p>La suma de los números de ${a} a ${b} es: ${suma}</p>`;
 }
 
-// Ejemplos de uso
-leapYears(2024); // Muestra en la página web y en la consola
-leapYears(1900); // Muestra en la página web y en la consola
-leapYears(2000); // Muestra en la página web y en la consola
-leapYears(2023); // Muestra en la página web y en la consola
+sumAll(1, 10);
+sumAll(5, 15);
+sumAll(10, 20);
