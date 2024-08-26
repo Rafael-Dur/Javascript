@@ -5,9 +5,10 @@ function repeatString(texto, repeticiones) {
         resultado += texto + '<br>'
     }
     document.getElementById("output").innerHTML = resultado;
+    console.log(texto);
+
 }
 
-// Ejemplo de uso
 document.getElementById.toString
 repeatString("Hola, Rafael", 10);
 
